@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
 @theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -14,6 +17,21 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .heading {
+    @apply bg-[#141414] px-6 py-3 font-sans sm:text-[54px] text-[36px] max-w-5xl text-center my-5 mx-4 rounded-2xl;
+  }
+  .search-form {
+    @apply max-w-3xl min-h-[40px] bg-[#141414] border-1 border-[#262525] rounded-[40px] text-[14px] mt-4 mx-4 px-5 flex flex-row items-center gap-5
+  }
+  .serch-input {
+    @apply flex-1 text-sm placeholder:text-[#7d7d7d] w-full h-auto outline-none
+  }
+  .search-btn {
+    @apply bg-[#202020] p-1 px-2 text-[10px] rounded-full flex align-middle items-center
   }
 }
 
