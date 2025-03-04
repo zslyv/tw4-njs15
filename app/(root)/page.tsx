@@ -10,8 +10,8 @@ const Home = async ({searchParams}: {searchParams: Promise<{query?: string}>}) =
     views: 55,
     author: {authorId: 1, name: 'Slyv'},
     _id: 1,
-    description: 'Rhis is a description.',
-    image: 'public/yeah_image.jpg',
+    description: 'This is a description.',
+    image: '/yeah_image.jpg',
     category: 'Anime',
     title: 'Project Sekai',
   }];
@@ -22,7 +22,7 @@ const Home = async ({searchParams}: {searchParams: Promise<{query?: string}>}) =
       <h1 className='heading'>Home</h1>
       {/* <SearchForm query={query}/> */}
 
-      <section className='section_container'>
+      <section className='section_container mx-20'>
         <p className='text-30-semibold'>
           {query ? `Search results for ${query}`: `All results`}
         </p>
@@ -31,7 +31,8 @@ const Home = async ({searchParams}: {searchParams: Promise<{query?: string}>}) =
           {posts?.length > 0 ? (
             posts.map((post:StartupCardType) => (
               <StartupCard key={post?._id} post={post}/>
-            ))
+            )
+          )
           ):(
             <p className='no-results'>No startups found.</p>
           )}
