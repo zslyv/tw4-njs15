@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { auth, signIn, signOut } from '@/app/auth'
+import SearchForm from './SearchForm'
 
 const Navbar = async () => {
+    
     const session = await auth()
 
     return (
@@ -12,6 +14,7 @@ const Navbar = async () => {
                 <Link href="/">
                     <Image src="/favicon.ico" alt="Logo" width={25} height={25} />
                 </Link>
+                <SearchForm/>
                 <div className='flex items-center gap-5'>
                     {session && session?.user ? (
                         // Render the content you want or can be the following one:
